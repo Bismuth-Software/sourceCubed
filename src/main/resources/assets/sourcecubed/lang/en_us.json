@@ -1,0 +1,29 @@
+{
+  "sourcecubed.configuration.enabled": "Enable source³ Movement",
+
+
+
+  "sourcecubed.configuration.uncappedBunnyhopEnabled": "Uncapped Bunnyhopping",
+  "sourcecubed.configuration.longJumpEnabled": "Long Jumping",
+  "sourcecubed.configuration.trimpEnabled": "Trimping",
+  "sourcecubed.configuration.sharkingEnabled": "Sharking",
+
+  "sourcecubed.configuration.groundAccelerate": "Ground Acceleration",
+  "sourcecubed.configuration.airAccelerate": "Air Acceleration",
+  "sourcecubed.configuration.maxAirAccelerationPerTick": "Max Air Acceleration Per Tick",
+  "sourcecubed.configuration.hardCapThreshold": "Hard Cap Threshold",
+  "sourcecubed.configuration.softCapThreshold": "Soft Cap Threshold",
+  "sourcecubed.configuration.softCapDegen": "Soft Cap Degen",
+
+  "sourcecubed.configuration.longJumpForwardStrength": "Long Jump Forward Strength",
+  "sourcecubed.configuration.normalLongJumpVerticalStrength": "Long Jump Vertical Strength",
+  "sourcecubed.configuration.endLongJumpVerticalStrength": "Long Jump Vertical Strength (End)",
+  "sourcecubed.configuration.normalLongJumpCooldown": "Long Jump Cooldown",
+
+  "sourcecubed.configuration.trimpMultiplier": "Trimp Multiplier",
+
+  "sourcecubed.configuration.sharkingWaterFriction": "Sharking Water Friction",
+  "sourcecubed.configuration.sharkingSurfaceTension": "Sharking Surface Tension",
+
+  "sourcecubed.configuration.fallDistanceThresholdIncrease": "Fall Damage Threshold Increase"
+}
