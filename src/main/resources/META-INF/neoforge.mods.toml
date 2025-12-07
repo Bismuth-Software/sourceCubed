@@ -14,7 +14,7 @@ displayName="source³" #mandatory
 displayURL="https://modrinth.com/mod/sourcecubed/" #optional
 
 # A file name (in the root of the mod JAR) containing a logo for display
-#logoFile="examplemod.png" #optional
+logoFile="logo.png" #optional
 
 authors="Ashley" #optional
 credits="Lein" #optional
