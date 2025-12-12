@@ -7,19 +7,15 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 public class PlayerAPI {
-
-    public static double getMotionX(Entity entity)
-    {
+    public static double getMotionX(Entity entity) {
         return entity.getDeltaMovement().x;
     }
 
-    public static double getMotionY(Entity entity)
-    {
+    public static double getMotionY(Entity entity) {
         return entity.getDeltaMovement().y;
     }
 
-    public static double getMotionZ(Entity entity)
-    {
+    public static double getMotionZ(Entity entity) {
         return entity.getDeltaMovement().z;
     }
 
@@ -58,8 +54,7 @@ public class PlayerAPI {
         return relative.z;
     }
 
-    public static boolean notZero(double val)
-    {
+    public static boolean notZero(double val) {
         return Math.abs(val) >= 1.0E-4;
     }
 

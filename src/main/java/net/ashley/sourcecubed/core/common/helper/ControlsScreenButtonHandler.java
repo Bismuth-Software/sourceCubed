@@ -20,11 +20,11 @@ public class ControlsScreenButtonHandler {
         int x = screen.width / 2 - 155;
         int y = screen.height / 6 + 36;
 
-        Component label = Component.literal("Squake Movement: " + (Config.isEnabled() ? "ON" : "OFF"));
+        Component label = Component.literal("Source Movement: " + (Config.isEnabled() ? "ON" : "OFF"));
 
         Button toggle = Button.builder(label, button -> {
             Config.setEnabled(!Config.isEnabled());
-            button.setMessage(Component.literal("Squake Movement: " + (Config.isEnabled() ? "ON" : "OFF")));
+            button.setMessage(Component.literal("Source Movement: " + (Config.isEnabled() ? "ON" : "OFF")));
         }).bounds(x, y, width, height).build();
 
         event.addListener(toggle);

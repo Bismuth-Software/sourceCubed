@@ -105,7 +105,7 @@ public class Config {
 
     private static final ModConfigSpec.DoubleValue SHARKING_WATER_FRICTION = BUILDER
             .comment("Amount of friction while sharking (between 0 and 1)")
-            .defineInRange("sharkingWaterFriction", 0.7D, 0D, 1D);
+            .defineInRange("sharkingWaterFriction", 0.3D, 0D, 1D);
     public static double sharkingWaterFriction;
 
     private static final ModConfigSpec.DoubleValue SHARKING_SURFACE_TENSION = BUILDER

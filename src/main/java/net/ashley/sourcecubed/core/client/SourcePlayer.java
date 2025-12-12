@@ -50,7 +50,7 @@ public class SourcePlayer {
         if(player.hasEffect(MobEffects.LEVITATION))
             return false;
 
-        if(squakeEntity.shouldReturnMovement_squake())
+        if(squakeEntity.shouldReturnMovement_())
             return false;
 
         boolean didQuakeMovement;
@@ -101,7 +101,7 @@ public class SourcePlayer {
         if(player.hasEffect(MobEffects.LEVITATION))
             return false;
 
-        if(squakeEntity.shouldReturnMovement_squake())
+        if(squakeEntity.shouldReturnMovement_())
             return false;
 
         if((player.getAbilities().flying && player.getVehicle() == null) || player.isInWater() || player.isInLava() || player.onClimbable()) {
@@ -376,7 +376,7 @@ public class SourcePlayer {
             return false;
         } else if(player.isInWater() && !player.getAbilities().flying) {
             if(Config.sharkingEnabled)
-                quake_WaterMove(player, sidemove, upmove, forwardmove);
+                quake_WaterMove(player, sidemove * 2, upmove * 2F, forwardmove * 2);
             else {
                 return false;
             }
@@ -502,7 +502,7 @@ public class SourcePlayer {
         // get all relevant movement values
         float wishspeed = (sidemove != 0.0F || forwardmove != 0.0F) ? quake_getMaxMoveSpeed(player) : 0.0F;
         float[] wishdir = getMovementDirection(player, sidemove, forwardmove);
-        boolean isSharking = isJumping(player) && PlayerAPI.isOffsetPositionInLiquid(player, 0.0D, 1.0D, 0.0D);
+        boolean isSharking = isJumping(player) && PlayerAPI.isOffsetPositionInLiquid(player, 0.0D, 0.5D, 0.0D);
         double curspeed = getSpeed(player);
 
         if(!isSharking || curspeed < 0.078F) {

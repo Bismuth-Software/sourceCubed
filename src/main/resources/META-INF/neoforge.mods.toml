@@ -1,24 +1,18 @@
-modLoader="javafml" #mandatory
-loaderVersion="${loader_version_range}" #mandatory
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
 license="AGPL-3.0"
-issueTrackerURL="https://github.com/Bismuth-Software/Bon-Appetit/issues" #optional
+issueTrackerURL="https://github.com/Bismuth-Software/Bon-Appetit/issues"
 
-[[mods]] #mandatory
-modId="sourcecubed" #mandatory
-version="0.1.0-21.1" #mandatory
-displayName="source³" #mandatory
+[[mods]]
+modId="sourcecubed"
+version="0.2.0-21.1"
+displayName="source³"
 
-# A URL to query for updates for this mod. See the JSON update specification https://docs.neoforged.net/docs/misc/updatechecker/
-#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
-
-displayURL="https://modrinth.com/mod/sourcecubed/" #optional
-
-# A file name (in the root of the mod JAR) containing a logo for display
-logoFile="logo.png" #optional
-
-authors="Ashley" #optional
-credits="Lein" #optional
-description='''creature'''
+displayURL="https://modrinth.com/mod/sourcecubed/"
+logoFile="source^3.png"
+authors="Ashley"
+credits="Lein"
+description='''Source, but Cubed'''
 
 [[mixins]]
 config="sourcecubed.mixins.json"
@@ -29,19 +23,11 @@ config="sourcecubed.mixins.json"
 #file="META-INF/accesstransformer.cfg"
 
 # The coremods config file path is not configurable and is always loaded from META-INF/coremods.json
-
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.bonappetit]] #optional
-modId="neoforge" #mandatory
-# The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
-type="required" #mandatory
-# Optional field describing why the dependency is required or why it is incompatible
-# reason="..."
-versionRange="[${neo_version},)" #mandatory
-# BEFORE - This mod is loaded BEFORE the dependency
-# AFTER - This mod is loaded AFTER the dependency
+[[dependencies.bonappetit]]
+modId="neoforge"
+type="required"
+versionRange="[${neo_version},)"
 ordering="NONE"
-# Side this dependency is applied on - BOTH, CLIENT, or SERVER
 side="BOTH"
 
 [[dependencies.bonappetit]]
