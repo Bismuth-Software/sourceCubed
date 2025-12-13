@@ -171,13 +171,14 @@ public class SourcePlayer {
         double verticalBoost = Config.longJumpVerticalStrength;
 
         double speed = Math.sqrt(current.x * current.x + current.z * current.z);
-        double forwardBoost = Config.longJumpForwardStrength + (speed * 0.35);
+        double forwardBoost = Config.longJumpForwardStrength + (speed * 0.25);
 
         if (dimensionKey == Level.END) {
             verticalBoost = Config.endLongJumpVerticalStrength;
             LONGJUMP_COOLDOWN_MS = Config.longJumpCooldown + 200;
         }
 
+        if (player.getFoodData().getFoodLevel() <= 6) return;
         Vec3 boost = new Vec3(
                 look.x * forwardBoost,
                 verticalBoost,
@@ -187,6 +188,7 @@ public class SourcePlayer {
 
         didLongJump = true;
         lastLongJumpTime = currentTime;
+        player.getFoodData().addExhaustion(4F);
     }
     private static void clampVerticalVelocity(Player player, double maxY) {
         double currentY = PlayerAPI.getMotionY(player);

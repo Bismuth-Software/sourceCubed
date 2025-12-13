@@ -9,7 +9,7 @@ version="0.2.0-21.1"
 displayName="source³"
 
 displayURL="https://modrinth.com/mod/sourcecubed/"
-logoFile="source^3.png"
+logoFile="sourcesquared.png"
 authors="Ashley"
 credits="Lein"
 description='''Source, but Cubed'''
