@@ -2,6 +2,8 @@ package net.ashley.sourcecubed;
 
 import com.mojang.logging.LogUtils;
 import net.ashley.sourcecubed.core.common.helper.ControlsScreenButtonHandler;
+import net.ashley.sourcecubed.core.common.helper.FallDamageHandler;
+import net.ashley.sourcecubed.core.common.helper.SourceFallDamageHelper;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -21,6 +23,9 @@ public class SourceCubed {
         modEventBus.addListener(this::commonSetup);
 
         NeoForge.EVENT_BUS.addListener(ControlsScreenButtonHandler::onScreenInit);
+        NeoForge.EVENT_BUS.addListener(FallDamageHandler::onLivingFall);
+        NeoForge.EVENT_BUS.addListener(SourceFallDamageHelper::onFall);
+        NeoForge.EVENT_BUS.addListener(SourceFallDamageHelper::onPlayerTick);
         NeoForge.EVENT_BUS.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
