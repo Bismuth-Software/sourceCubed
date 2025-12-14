@@ -7,6 +7,7 @@
   "sourcecubed.configuration.longJumpEnabled": "Long Jumping",
   "sourcecubed.configuration.trimpEnabled": "Trimping",
   "sourcecubed.configuration.sharkingEnabled": "Sharking",
+  "sourcecubed.configuration.velocityFallDamageEnabled": "Velocity-Based Fall Damage",
 
   "sourcecubed.configuration.groundAccelerate": "Ground Acceleration",
   "sourcecubed.configuration.airAccelerate": "Air Acceleration",
@@ -25,5 +26,9 @@
   "sourcecubed.configuration.sharkingWaterFriction": "Sharking Water Friction",
   "sourcecubed.configuration.sharkingSurfaceTension": "Sharking Surface Tension",
 
+  "sourcecubed.configuration.velocityDistanceThreshold": "Velocity Distance Threshold",
+  "sourcecubed.configuration.velocityDamageThreshold": "Velocity Damage Threshold",
+  "sourcecubed.configuration.velocityDamageMultiplier": "Velocity Damage Multiplier",
+  "sourcecubed.configuration.velocityDamageExponent": "Velocity Damage Exponent",
   "sourcecubed.configuration.fallDistanceThresholdIncrease": "Fall Damage Threshold Increase"
 }

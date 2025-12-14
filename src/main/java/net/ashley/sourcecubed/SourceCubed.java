@@ -21,6 +21,7 @@ public class SourceCubed {
 
     public SourceCubed(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(Config::onLoad);
 
         NeoForge.EVENT_BUS.addListener(ControlsScreenButtonHandler::onScreenInit);
         NeoForge.EVENT_BUS.addListener(FallDamageHandler::onLivingFall);

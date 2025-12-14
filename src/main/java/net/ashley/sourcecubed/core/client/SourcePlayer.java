@@ -73,8 +73,7 @@ public class SourcePlayer {
         return didQuakeMovement;
     }
 
-    public static void beforeOnLivingUpdate(Player player)
-    {
+    public static void beforeOnLivingUpdate(Player player) {
         if(!player.level().isClientSide)
             return;
 
@@ -91,8 +90,7 @@ public class SourcePlayer {
         }
     }
 
-    public static boolean moveRelativeBase(Entity entity, ISourceCubedEntity squakeEntity, float sidemove, float upmove, float forwardmove, float friction)
-    {
+    public static boolean moveRelativeBase(Entity entity, ISourceCubedEntity squakeEntity, float sidemove, float upmove, float forwardmove, float friction) {
         if(entity instanceof Player player)
             return moveRelative(player, squakeEntity, sidemove, upmove, forwardmove, friction);
 

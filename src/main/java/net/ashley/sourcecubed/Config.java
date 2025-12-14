@@ -43,6 +43,11 @@ public class Config {
             .define("sharkingEnabled", true);
     public static boolean sharkingEnabled;
 
+    private static final ModConfigSpec.BooleanValue VELOCITY_BASED_FALL_DAMAGE_ENABLED = BUILDER
+            .comment("If enabled, fall damage is no longer based on distance fallen, and is instead based on velocity").gameRestart()
+            .define("velocityFallDamageEnabled", true);
+    public static boolean velocityFallDamageEnabled;
+
     //Doubles
     private static final ModConfigSpec.DoubleValue ACCELERATE = BUILDER
             .comment("A higher value means you accelerate faster on the ground")
@@ -105,7 +110,7 @@ public class Config {
 
     private static final ModConfigSpec.DoubleValue SHARKING_WATER_FRICTION = BUILDER
             .comment("Amount of friction while sharking (between 0 and 1)")
-            .defineInRange("sharkingWaterFriction", 0.3D, 0D, 1D);
+            .defineInRange("sharkingWaterFriction", 0.15D, 0D, 1D);
     public static double sharkingWaterFriction;
 
     private static final ModConfigSpec.DoubleValue SHARKING_SURFACE_TENSION = BUILDER
@@ -114,15 +119,35 @@ public class Config {
     public static double sharkingSurfTension;
 
 
+    private static final ModConfigSpec.DoubleValue VELOCITY_DISTANCE_THRESHOLD = BUILDER
+            .comment("Only matters if Velocity Fall Damage is enabled! The velocity required to start taking damage.")
+            .defineInRange("velocityDistanceThreshold", 0.75D, 0D, Double.MAX_VALUE);
+    public static double velocityDistanceThreshold;
+
+    private static final ModConfigSpec.DoubleValue VELOCITY_DAMAGE_THRESHOLD = BUILDER
+            .comment("Only matters if Velocity Fall Damage is enabled! The velocity required to start building up damage.")
+            .defineInRange("velocityDistanceThreshold", 0.65D, 0D, Double.MAX_VALUE);
+    public static double velocityDamageThreshold;
+
+    private static final ModConfigSpec.DoubleValue VELOCITY_DAMAGE_MULTIPLIER = BUILDER
+            .comment("Only matters if Velocity Fall Damage is enabled! The multiplier for your velocity; calculates how much damage you'll take")
+            .defineInRange("velocityDamageMultiplier", 75D, 0D, Double.MAX_VALUE);
+    public static double velocityDamageMultiplier;
+
+    private static final ModConfigSpec.DoubleValue VELOCITY_DAMAGE_EXPONENT = BUILDER
+            .comment("Only matters if Velocity Fall Damage is enabled! The exponent for your velocity; determines how harsh the exponential damage will be. A value of 1 disables this")
+            .defineInRange("velocityDamageExponent", 3D, 1D, Double.MAX_VALUE);
+    public static double velocityDamageExponent;
+
     private static final ModConfigSpec.DoubleValue INCREASED_FALL_DISTANCE = BUILDER
-            .comment("Increases the distance needed to fall in order to take fall damage; this is a server-side setting")
+            .comment("Only matters if Velocity Fall Damage is disabled! Increases the distance needed to fall in order to take fall damage; this is a server-side setting")
             .defineInRange("fallDistanceThresholdIncrease", 1.5D, 0D, Double.MAX_VALUE);
     public static float increasedFallDistance;
 
     static final ModConfigSpec SPEC = BUILDER.build();
     @SubscribeEvent
     public static void onLoad(final ModConfigEvent.Loading configEvent) {
-        SourceCubed.LOGGER.debug("Loaded HalfCraft config file {}", configEvent.getConfig().getFileName());
+        SourceCubed.LOGGER.debug("Loaded source³ config file {}", configEvent.getConfig().getFileName());
 
         sharkingEnabled = SHARKING_ENABLED.get();
         longJumpingEnabled = LONG_JUMPING_ENABLED.get();
@@ -142,5 +167,10 @@ public class Config {
         hardCap = HARD_CAP.get().floatValue() * 0.125F;
         softCapDegen = SOFT_CAP_DEGEN.get().floatValue();
         increasedFallDistance = INCREASED_FALL_DISTANCE.get().floatValue();
+        velocityFallDamageEnabled = VELOCITY_BASED_FALL_DAMAGE_ENABLED.get();
+        velocityDamageMultiplier = VELOCITY_DAMAGE_MULTIPLIER.get();
+        velocityDamageExponent = VELOCITY_DAMAGE_EXPONENT.get();
+        velocityDistanceThreshold = VELOCITY_DISTANCE_THRESHOLD.get();
+        velocityDamageThreshold = VELOCITY_DAMAGE_THRESHOLD.get();
     }
 }
